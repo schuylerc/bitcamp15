@@ -1,0 +1,15 @@
+{
+  "name": "Taleggio",
+  "description": "",
+  "homepage": "",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.8.0",
+    "paper-elements": "Polymer/paper-elements#~0.5.5",
+    "core-scaffold": "Polymer/core-scaffold#master",
+    "webcomponentsjs": "Polymer/webcomponentsjs#~0.6.0",
+    "core-elements": "Polymer/core-elements#~0.5.5"
+  }
+}

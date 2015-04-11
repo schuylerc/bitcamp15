@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Taleggio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-icons/core-icons.html">
+    <link rel="import" href="bower_components/core-icons/maps-icons.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-dropdown/paper-dropdown.html">
+    <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="bower_components/paper-fab/paper-fab.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    </style>
+  </head>
+  <body fullbleed unresolved>
+    <core-scaffold>
+      <!-- Drawer panel -->
+      <core-header-panel navigation flex>
+        <core-toolbar>
+          Navigation
+        </core-toolbar>
+        <core-menu>
+          <core-item class="drawer-icon" icon="settings" label="Settings"></core-item>
+        </core-menu>
+      </core-header-panel>
+
+      <!-- App Title -->
+      <div tool layout horizontal flex>
+        <span flex tool>Taleggio</span>
+        <core-item icon="refresh"></core-item>
+      </div>
+
+      <!-- Main content -->
+      <div flex>
+        <core-card id="core_card" vertical layout start>
+          <div style="padding: 20px;">
+            <core-icon icon="info-outline"></core-icon>
+            This is a test card.
+          </div>
+        </core-card>
+      <div>
+    </core-scaffold>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
