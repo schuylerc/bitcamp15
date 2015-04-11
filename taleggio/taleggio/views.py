@@ -7,3 +7,7 @@ def index(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def dwelling(request):
+	return render(request, 'dwelling.html')
+
