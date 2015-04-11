@@ -1,6 +1,23 @@
-from django.shortcuts import render
+from django.views.generic import CreateView, DetailView, DeleteView, ListView,\
+    UpdateView
+from dwellings.models import Dwelling
 
-# Create your views here.
-def dwellingDetail(request):
-	#this shows an individual dwellings based on the id
-	return render(request, 'dwelling.html', {'user': request.user})
+
+class DwellingCreate(CreateView):
+    model = Dwelling
+
+
+class DwellingUpdate(UpdateView):
+    model = Dwelling
+
+
+class DwellingList(ListView):
+    model = Dwelling
+
+
+class DwellingDelete(DeleteView):
+    model = Dwelling
+
+
+class DwellingView(DetailView):
+    model = Dwelling
