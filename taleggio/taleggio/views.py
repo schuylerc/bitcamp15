@@ -8,7 +8,3 @@ def index(request):
 def auth_test(request):
     return render(request, 'auth_test.html', {'user': request.user})
 
-
-def dwellings(request):
-	#should show a list of all available dwellings
-	return render(request, 'dwellings.html', {'user': request.user})
