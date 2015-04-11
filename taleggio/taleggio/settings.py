@@ -128,3 +128,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     '/srv/www/static/',
 )
+
+try:
+    from .secrets import *
+except:
+    pass
+
+LOGIN_REDIRECT_URL = '/'
