@@ -137,3 +137,5 @@ bower_components
 ### Vagrant ###
 .vagrant/
 
+### node modules ###
+node_modules/

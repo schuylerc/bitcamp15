@@ -2,3 +2,4 @@ django
 psycopg2
 gunicorn
 python-social-auth
+#django_localflavor_us
