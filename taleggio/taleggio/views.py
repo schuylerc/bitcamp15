@@ -2,8 +2,12 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'user': request.user})
 
 
-def login(request):
-    return render(request, 'login.html')
+def auth_test(request):
+    return render(request, 'auth_test.html', {'user': request.user})
+
+
+def dwelling(request):
+	return render(request, 'dwelling.html', {'user': request.user})

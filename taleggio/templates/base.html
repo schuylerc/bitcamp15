@@ -46,7 +46,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -57,10 +57,22 @@
                         <a class="page-scroll" href="#portfolio">Products</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Login</a>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                       {% if user and not user.is_anonymous %}
+                         <a href="">{{ user.get_full_name|default:user.username }}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                         <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+                    </li>
+                       {% else %}
+                         <a href="#contact">Login</a>
+                       {% endif %}
                     </li>
                 </ul>
             </div>
