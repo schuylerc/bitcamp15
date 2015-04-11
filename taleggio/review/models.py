@@ -15,6 +15,23 @@ class ReviewManager(models.Manager):
       #returns the overall rating attached to a given object(tenant, landlord, dwelling)
       pass
 
+   def createReview(self):
+      #creates review
+      pass
+
+   def updateReview(self):
+      #update the review
+      pass
+
+   def deleteReview(self):
+      #deletes review
+      pass
+
+   def ReviewsOwnedByUser(self):
+      #returns all the reviews owned by a specific user
+      pass
+
+
 class Review(models.Model):
    rating = models.IntegerField(
       default=1,
