@@ -6,7 +6,8 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', 'taleggio.views.index', name='index'),
-    url(r'^dwelling/$', 'taleggio.views.dwelling', name='dwelling'),
+    url(r'^dwelling/$', 'taleggio.views.dwellings', name='dwellings'),
+    url(r'^dwelling/(?P<dwelling_id>\d+)/$', 'dwelling.views.dwellingDetail', name='dwellingDetail'),
     url(r'^auth_test/$', 'taleggio.views.auth_test', name='auth_test'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
