@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Additional apps
+    'social.apps.django_app.default',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,11 +64,21 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'taleggio.wsgi.application'
 
@@ -75,12 +87,16 @@ WSGI_APPLICATION = 'taleggio.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
+    #  'default': {
+    #      'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #      'NAME': 'postgres',
+    #      'USER': 'postgres',
+    #      'HOST': 'db_1',
+    #      'PORT': '5432',
+    #  }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db_1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
