@@ -52,7 +52,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+               <ul class="nav navbar-nav">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -62,12 +62,26 @@
                     <li>
                         <a class="page-scroll" href="#portfolio">Products</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+               </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    {% if user and not user.is_anonymous %}
+                     <a href="profile" class="dropdown-toggle" data-toggle="dropdown">{{ user.get_full_name|default:user.username }}<b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                            <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'auth:logout' %}?next={{ request.path }}"><i class="fa fa-sign-out"></i> Logout</a>
+                        </li>
+                     </ul>
+                    {% else %}
+                     <a href="login" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                            <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-facebook-square"></i> Login with Facebook</a>
+                            <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-twitter-square"></i> Login with Twitter</a>
+                        </li>
+                     </ul>
+                    {% endif %}
+                  </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -78,10 +92,12 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h1 style="margin-bottom: 10px;">What are you looking for?</h1>
+                <!--<hr>-->
+                <p>
+                <input name="search" id="search" class="form-control" type="text" style="font-size: 1.5em; line-height: 1.5em; height: 2em;" placeholder="Find reviews of landlords, roommates, and places to live">
+                </p>
+                <a class="btn btn-primary btn-xl"><i class="fa fa-search"></i> Find Out More</a>
             </div>
         </div>
     </header>
