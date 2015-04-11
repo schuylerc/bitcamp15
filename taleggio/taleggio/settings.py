@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Additional apps
     'social.apps.django_app.default',
+    #'django.contrib.gis',
+    'dwelling',
 )
 
 MIDDLEWARE_CLASSES = (
