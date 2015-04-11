@@ -1,6 +1,18 @@
 # bitcamp15
 Our BitCamp project for 2015!
 
+## Deploy Webapp
+
+Execute the following
+
+    $ cd django-docker-starter
+    $ vagrant up
+    $ vagrant ssh
+    $ cd /srv/www
+    $ sudo su
+    # docker-compose up
+    # docker-compose run web python manage.py migrate
+
 ## Mobile Application
 
 Execute the following
