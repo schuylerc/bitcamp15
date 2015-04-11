@@ -3,7 +3,15 @@ from django.db import models
 #from django.contrib.localflavor.us.models import USStateField
 
 class DwellingManager(models.Manager):
-   pass
+   def createDwelling(self):
+      #create a dwelling
+      pass
+   def updateDwelling(self):
+      #update a dwelling
+      pass
+   def deleteDwelling(self):
+      #delete a dwelling
+      pass
 
 
 # Create your models here.
@@ -30,6 +38,7 @@ class Dwelling(models.Model):
       (APARTMENT, 'Apartment'),
       (HOUSE, 'House')
    )
+
 
    dwellingType = models.CharField(max_length=2, choices=DWELLING_CHOICES)
 
