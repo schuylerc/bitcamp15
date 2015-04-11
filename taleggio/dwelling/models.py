@@ -2,6 +2,10 @@ from django.db import models
 #from django.contrib.gis.db import models
 #from django.contrib.localflavor.us.models import USStateField
 
+class DwellingManager(models.Manager):
+   pass
+
+
 # Create your models here.
 class Address(models.Model):
    number = models.IntegerField()
@@ -9,6 +13,9 @@ class Address(models.Model):
    city = models.CharField(max_length=100)
    state = models.CharField(max_length=2)
    zipcode = models.IntegerField()
+
+   def __str__(self):
+      return self.number.__str__() + " " + self.street + ", " + self.state
 
 class Dwelling(models.Model):
    name = models.CharField(max_length=30)
@@ -26,7 +33,9 @@ class Dwelling(models.Model):
 
    dwellingType = models.CharField(max_length=2, choices=DWELLING_CHOICES)
 
+   objects = DwellingManager()
+
    def __str__(self):
-      return ""
+      return self.name
 
 

@@ -65,12 +65,15 @@
 
                     <li>
                        {% if user and not user.is_anonymous %}
-                         <a class="page-scroll" href="#contact">Hello {{ user.get_full_name|default:user.username }}</a>
+                         <a href="">{{ user.get_full_name|default:user.username }}</a>
+                    </li>
+                    <li>
+                         <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+                    </li>
                        {% else %}
-                         <a class="page-scroll" href="#contact">Login</a>
+                         <a href="#contact">Login</a>
                        {% endif %}
                     </li>
-                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
