@@ -30,13 +30,16 @@ class Review(models.Model):
 
    objects = ReviewManager()
 
+   def __str__(self):
+      return self.userCreated.__str__() + " - " + self.content[:10]
+
 class DwellingReview(Review):
    Dwelling = models.ForeignKey(Dwelling)
 
 class TenantReview(Review):
-   Tenant = models.ForeignKey(User) #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
+   Tenant = models.ForeignKey(User, related_name="Tenant") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
 
 class LandlordReview(Review):
-   Landlord = models.ForeignKey(User) #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
+   Landlord = models.ForeignKey(User, related_name="Landlord") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
 
 
