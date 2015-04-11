@@ -14,6 +14,9 @@ class Address(models.Model):
    state = models.CharField(max_length=2)
    zipcode = models.IntegerField()
 
+   def __str__(self):
+      return self.number.__str__() + " " + self.street + ", " + self.state
+
 class Dwelling(models.Model):
    name = models.CharField(max_length=30)
    address = models.ForeignKey('Address')
@@ -33,6 +36,6 @@ class Dwelling(models.Model):
    objects = DwellingManager()
 
    def __str__(self):
-      return ""
+      return self.name
 
 
