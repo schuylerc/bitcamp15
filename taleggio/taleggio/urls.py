@@ -7,6 +7,7 @@ urlpatterns = [
 
     url(r'^$', 'taleggio.views.index', name='index'),
     url(r'^login/$', 'taleggio.views.login', name='login'),
+    url(r'^dwelling/$', 'taleggio.views.dwelling', name='dwelling'),
     #url('', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^admin/', include(admin.site.urls)),
