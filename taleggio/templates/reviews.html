@@ -3,26 +3,13 @@
 {% block main %}
  <div class="container" style="margin-top: 70px;">
 
-<ol class="breadcrumb">
-  <li><a href="#">United States</a></li>
-</ol>
-
 <div class="row">
-<div class="col-md-3 thumbnail">
-<h4>Search</h4>
-<h4>Price Range</h4>
-<h4>Price Range</h4>
-
-</div>
-
-  <div class="col-md-9">
+  <div class="col-md-10 col-md-offset-1">
     <div class="thumbnail">
-      
       {% for review in object_list %}
-      <img src="..." alt="...">
       <div class="caption">
-        <h3>Review for: {{ review.Dwelling.address }}</h3>
-        <h6>by: {{ review.userCreated.first_name }} {{ review.userCreated.last_name }}</h6>
+        <h4>Review for: {{ review.Dwelling.address }}</h4>
+        <p>by: {{ review.userCreated.first_name }} {{ review.userCreated.last_name }}</p>
         <p>{{ review.content }}</p>
       </div>
       {% endfor %}
