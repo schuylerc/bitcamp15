@@ -37,7 +37,8 @@ class Dwelling(models.Model):
         (HOUSE, 'House')
     )
 
-    dwelling_type = models.CharField(max_length=2, choices=DWELLING_CHOICES)
+    dwelling_type = models.CharField(max_length=2, choices=DWELLING_CHOICES,
+                                     blank=True)
 
     objects = DwellingManager()
 
