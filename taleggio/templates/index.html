@@ -94,10 +94,13 @@
             <div class="header-content-inner">
                 <h1 style="margin-bottom: 10px;">What are you looking for?</h1>
                 <!--<hr>-->
-                <p>
-                <input name="search" id="search" class="form-control" type="text" style="font-size: 1.5em; line-height: 1.5em; height: 2em;" placeholder="Find reviews of landlords, roommates, and places to live">
-                </p>
-                <a class="btn btn-primary btn-xl"><i class="fa fa-search"></i> Find Out More</a>
+
+                <form action = "/search/" method="post" id = "searchForm">
+                   <input name="searchQuery" class="form-control" type="text" style="font-size: 1.5em; line-height: 1.5em; height: 2em;" placeholder="Find reviews of landlords, roommates, and places to live">
+                </form>
+
+                <button type="submit" form="searchForm" class="btn btn-primary btn-xl"><i class="fa fa-search"></i> Find Out More</button>
+
             </div>
         </div>
     </header>

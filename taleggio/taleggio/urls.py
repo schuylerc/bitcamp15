@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^api/v1/', include(router.urls)),
     url(r'^$', 'taleggio.views.index', name='index'),
     url(r'^dwelling/', include('dwelling.urls')),
+    url(r'^search/', 'dwelling.views.search', name='search'),
     url(r'^auth_test/$', 'taleggio.views.auth_test', name='auth_test'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
