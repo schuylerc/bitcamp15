@@ -53,8 +53,8 @@ class Dwelling(models.Model):
         return str(self.address)
 
     def save(self, *args, **kwargs):
-        
-        super(Blog, self).save(*args, **kwargs) # Call the "real" save() method.
+
+        super(Dwelling, self).save(*args, **kwargs) # Call the "real" save() method.
 
 
 
