@@ -27,48 +27,48 @@
                             Average Tenant Rating: 
                             
 
-                            {% if totalRating >= 1.0 %}
+                            {% if object.totalRating >= 1.0 %}
                                 <span class="fa fa-star"></span>
-                                {% elif totalRating >= 0.5 %}
+                                {% elif object.totalRating >= 0.5 %}
                                 <span class="fa fa-star-half-o"></span>
                                 {% else %}
                                 <span class="fa fa-star-o"></span>
                             {% endif %}
                             
-                            {% if totalRating >= 2.0 %}
+                            {% if object.totalRating >= 2.0 %}
                                 <span class="fa fa-star"></span>
-                                {% elif totalRating >= 1.5 %}
+                                {% elif object.totalRating >= 1.5 %}
                                 <span class="fa fa-star-half-o"></span>
                                 {% else %}
                                 <span class="fa fa-star-o"></span>
                             {% endif %}
 
-                            {% if totalRating >= 3.0 %}
+                            {% if object.totalRating >= 3.0 %}
                                 <span class="fa fa-star"></span>
-                                {% elif totalRating >= 2.5 %}
+                                {% elif object.totalRating >= 2.5 %}
                                 <span class="fa fa-star-half-o"></span>
                                 {% else %}
                                 <span class="fa fa-star-o"></span>
                             {% endif %}
 
-                            {% if totalRating >= 4.0 %}
+                            {% if object.totalRating >= 4.0 %}
                                 <span class="fa fa-star"></span>
-                                {% elif totalRating >= 3.5 %}
+                                {% elif object.totalRating >= 3.5 %}
                                 <span class="fa fa-star-half-o"></span>
                                 {% else %}
                                 <span class="fa fa-star-o"></span>
                             {% endif %}
 
-                            {% if totalRating >= 5.0 %}
+                            {% if object.totalRating >= 5.0 %}
                                 <span class="fa fa-star"></span>
-                                {% elif totalRating >= 4.5 %}
+                                {% elif object.totalRating >= 4.5 %}
                                 <span class="fa fa-star-half-o"></span>
                                 {% else %}
                                 <span class="fa fa-star-o"></span>
                             {% endif %}
 
 
-                            {{totalRating}} stars
+                            {{object.totalRating}} stars
                         </p>
                     </div>
                 </div>

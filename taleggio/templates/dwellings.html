@@ -3,30 +3,92 @@
 {% block main %}
  <div class="container" style="margin-top: 70px;">
 
-<ol class="breadcrumb">
-  <li><a href="#">United States</a></li>
-</ol>
+<h1>Find Places</h1>
 
 <div class="row">
 <div class="col-md-3 thumbnail">
 <h4>Search</h4>
+<input type="text"> <button class="btn btn-primary">GO</button>
 <h4>Price Range</h4>
-<h4>Price Range</h4>
+slider
+<h4>Review Range</h4>
+slider
 
 </div>
 
   <div class="col-md-9">
     <div class="thumbnail">
-      
+      <h5 class="lead">Search Results</h5>
       {% for dwelling in object_list %}
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>{{ dwelling.address }}</h3>
-        {% if dwelling.desc %}
-        <p>{{ dwelling.desc|truncatechars:100 }}</p>
-        {% endif %}
-        <p><a href="/dwelling/{{ dwelling.id }}" class="btn btn-primary" role="button">View Property</a> </p>
+      <hr>
+      
+      <div class="row">
+      <div class="col-md-4" style="text-align: center;">
+        <img src="http://photos2.zillowstatic.com/p_h/ISt8i0lfd0uzax0000000000.jpg" alt="Dwelling Image" style="height: 200px">
       </div>
+      <div class="col-md-8">
+        <div class="caption">
+          <h3>{{ dwelling.address }}</h3>
+          <p>
+
+
+
+                            {% if dwelling.totalRating >= 1.0 %}
+                                <span class="fa fa-star"></span>
+                                {% elif dwelling.totalRating >= 0.5 %}
+                                <span class="fa fa-star-half-o"></span>
+                                {% else %}
+                                <span class="fa fa-star-o"></span>
+                            {% endif %}
+                            
+                            {% if dwelling.totalRating >= 2.0 %}
+                                <span class="fa fa-star"></span>
+                                {% elif dwelling.totalRating >= 1.5 %}
+                                <span class="fa fa-star-half-o"></span>
+                                {% else %}
+                                <span class="fa fa-star-o"></span>
+                            {% endif %}
+
+                            {% if dwelling.totalRating >= 3.0 %}
+                                <span class="fa fa-star"></span>
+                                {% elif dwelling.totalRating >= 2.5 %}
+                                <span class="fa fa-star-half-o"></span>
+                                {% else %}
+                                <span class="fa fa-star-o"></span>
+                            {% endif %}
+
+                            {% if dwelling.totalRating >= 4.0 %}
+                                <span class="fa fa-star"></span>
+                                {% elif dwelling.totalRating >= 3.5 %}
+                                <span class="fa fa-star-half-o"></span>
+                                {% else %}
+                                <span class="fa fa-star-o"></span>
+                            {% endif %}
+
+                            {% if dwelling.totalRating >= 5.0 %}
+                                <span class="fa fa-star"></span>
+                                {% elif dwelling.totalRating >= 4.5 %}
+                                <span class="fa fa-star-half-o"></span>
+                                {% else %}
+                                <span class="fa fa-star-o"></span>
+                            {% endif %}
+
+
+                            {{dwelling.reviewCount}} reviews
+
+
+
+          </p>
+          <p>{{ dwelling.desc|truncatechars:100 }}</p>
+          
+          <p><a href="/dwelling/{{ dwelling.id }}" class="btn btn-primary" role="button">View Property</a> </p>
+        </div>
+      </div>
+      </div>
+      
+      
+      
+
       {% endfor %}
     </div>
   </div>
