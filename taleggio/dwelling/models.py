@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers
 
 class DwellingManager(models.Manager):
 
@@ -15,6 +16,11 @@ class Address(models.Model):
 
     def __unicode__(self):
         return u"{0} {1}, {2} {3}, {4}".format(self.number, self.street, self.city, self.state, self.zipcode)
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Address
 
 
 class Dwelling(models.Model):
@@ -37,3 +43,10 @@ class Dwelling(models.Model):
 
     def __unicode__(self):
         return str(self.address)
+
+
+class DwellingSerializer(serializers.ModelSerializer):
+    address = AddressSerializer()
+
+    class Meta:
+        model = Dwelling

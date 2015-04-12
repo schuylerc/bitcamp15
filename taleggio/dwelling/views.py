@@ -1,7 +1,9 @@
 from django.views.generic import CreateView, DetailView, DeleteView, ListView,\
     UpdateView
-from .models import Dwelling
+from .models import Dwelling, DwellingSerializer
 from review.models import Review
+from rest_framework import viewsets
+
 
 class DwellingCreate(CreateView):
     model = Dwelling
@@ -31,3 +33,6 @@ class DwellingView(DetailView):
         context['totalRating'] = Dwelling.objects.calculateRating(context['reviews'])
         return context
 
+class DwellingViewSet(viewsets.ModelViewSet):
+    queryset = Dwelling.objects.all()
+    serializer_class = DwellingSerializer
