@@ -1,6 +1,6 @@
 from django.views.generic import CreateView, DetailView, DeleteView, ListView,\
     UpdateView
-from dwellings.models import Dwelling
+from .models import Dwelling
 
 
 class DwellingCreate(CreateView):
@@ -9,10 +9,12 @@ class DwellingCreate(CreateView):
 
 class DwellingUpdate(UpdateView):
     model = Dwelling
+    template_name = 'dwelling_update.html'
 
 
 class DwellingList(ListView):
     model = Dwelling
+    template_name = 'dwelling_list.html'
 
 
 class DwellingDelete(DeleteView):
@@ -21,3 +23,4 @@ class DwellingDelete(DeleteView):
 
 class DwellingView(DetailView):
     model = Dwelling
+    template_name = 'dwelling_detail.html'
