@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, DetailView, DeleteView, ListView,\
     UpdateView
-from .models import Dwelling
+from .models import Dwelling, DwellingSerializer
+from rest_framework import viewsets
 
 
 class DwellingCreate(CreateView):
@@ -25,3 +26,8 @@ class DwellingView(DetailView):
     model = Dwelling
     dwelling_id = id
     template_name = 'dwellingDetail.html'
+
+
+class DwellingViewSet(viewsets.ModelViewSet):
+    queryset = Dwelling.objects.all()
+    serializer_class = DwellingSerializer

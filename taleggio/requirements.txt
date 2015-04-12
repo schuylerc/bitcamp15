@@ -3,3 +3,6 @@ psycopg2
 gunicorn
 python-social-auth
 #django_localflavor_us
+djangorestframework
+djangorestframework-xml
+djangorestframework-yaml
