@@ -14,7 +14,7 @@ class DwellingUpdate(UpdateView):
 
 class DwellingList(ListView):
     model = Dwelling
-    template_name = 'dwelling_list.html'
+    template_name = 'dwellings.html'
 
 
 class DwellingDelete(DeleteView):
@@ -23,4 +23,5 @@ class DwellingDelete(DeleteView):
 
 class DwellingView(DetailView):
     model = Dwelling
-    template_name = 'dwelling_detail.html'
+    dwelling_id = id
+    template_name = 'dwellingDetail.html'
