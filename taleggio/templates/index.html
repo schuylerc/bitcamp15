@@ -57,7 +57,7 @@
                         <a class="page-scroll" href="/dwelling/" %}">Places</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="">Reviews</a>
+                        <a class="page-scroll" href="/review">Reviews</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/api/v1/">API</a>
@@ -97,9 +97,9 @@
 
                 <form action = "/search/" method="post" id = "searchForm">
                     <p>
-                        <input name="searchQuery" class="form-control" type="text" style="font-size: 1.5em; line-height: 1.5em; height: 2em;" placeholder="Find reviews of landlords, roommates, and places to live">
+                        <input name="searchQuery" class="form-control" type="text" style="font-size: 1.5em; line-height: 1.5em; height: 2em; text-align: center;" placeholder="Find reviews of landlords/roommates/places to live">
                    </p>
-                    <button type="submit" form="searchForm" class="btn btn-primary btn-xl"><i class="fa fa-search"></i> Find Out More</button>
+                    <button type="submit" form="searchForm" class="btn btn-primary btn-xl"><i class="fa fa-search"></i> Search</button>
                 </form>
             </div>
         </div>
@@ -112,7 +112,7 @@
                     <h2 class="section-heading">Have a strong opinion?</h2>
                     <hr class="light">
                     <p class="text-faded">Write a review of your landlord, your roommates, your tenants, or your living situation. We'll use your reviews, reviews by others, public data, and sprinkle of magic to find you a new home, a new roomate, or new tenants!</p>
-                    <a href="#" class="btn btn-default btn-xl">Write a Review!</a>
+                    <a href="/dwelling" class="btn btn-default btn-xl">Write a Review!</a>
                 </div>
             </div>
         </div>
@@ -262,7 +262,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Are you a developer?</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Check out our API!</a>
+                <a href="/api/v1" class="btn btn-default btn-xl wow tada">Check out our API!</a>
             </div>
         </div>
     </aside>
