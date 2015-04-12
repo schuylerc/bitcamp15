@@ -5,3 +5,4 @@ djangorestframework
 djangorestframework-xml
 djangorestframework-yaml
 MetaMindApi
+django-cors-headers
