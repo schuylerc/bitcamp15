@@ -8,15 +8,15 @@ body {
   color: #909090;
 }
 core-scaffold::shadow core-toolbar {
-    background-color: #BF4F51;
+    background-color: #F05F40;
     color: #fff;
 }
 core-scaffold core-toolbar {
-    background-color: #BF4F51;
+    background-color: #F05F40;
     color: #fff;
 }
 paper-button[raised].colored {
-    background: #BF4F51;
+    background: #F05F40;
     color: #fff;
 }
 ::content > .avatar {
