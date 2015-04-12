@@ -17,6 +17,10 @@ class Address(models.Model):
     def __unicode__(self):
         return u"{0} {1}, {2} {3}, {4}".format(self.number, self.street, self.city, self.state, self.zipcode)
 
+    def __str__(self):
+        return "{0} {1}, {2} {3}, {4}".format(self.number, self.street, self.city, self.state, self.zipcode)
+
+
 
 class AddressSerializer(serializers.ModelSerializer):
     class Meta:
