@@ -50,6 +50,10 @@ class Review(models.Model):
    def __str__(self):
       return self.userCreated.__str__() + " - " + self.content[:10]
 
+   def save(self, *args, **kwargs):
+        super(Review, self).save(*args, **kwargs) # Call the "real" save() method.
+
+
 class DwellingReview(Review):
    Dwelling = models.ForeignKey(Dwelling)
 
