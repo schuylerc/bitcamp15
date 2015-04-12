@@ -73,12 +73,12 @@ class Review(models.Model):
 
 
 class DwellingReview(Review):
-   Dwelling = models.ForeignKey(Dwelling)
+   dwelling = models.ForeignKey(Dwelling)
 
 class TenantReview(Review):
-   Tenant = models.ForeignKey(User, related_name="Tenant") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
+   tenant = models.ForeignKey(User, related_name="Tenant") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
 
 class LandlordReview(Review):
-   Landlord = models.ForeignKey(User, related_name="Landlord") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
+   landlord = models.ForeignKey(User, related_name="Landlord") #this object may need to be changed later after oauth develops and Landlord/Tenant models are created
 
 
