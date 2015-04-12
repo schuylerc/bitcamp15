@@ -205,7 +205,6 @@
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-
       function initialize() {
         var mapCanvas = document.getElementById('map-canvas');
         var mapOptions = {
@@ -216,13 +215,6 @@
         var map = new google.maps.Map(mapCanvas, mapOptions)
       };
       google.maps.event.addDomListener(window, 'load', initialize);
-      {% for review in reviews %}
-      $.ajax({url: "https://www.metamind.io/language/classify",
-              type: "POST",
-              headers: {"Authorization" : "Basic JcsbHMxoLMdw70XN9XxSWH03H69yYKA8Ruad6B28lA1kgY0s4t"}, 
-              data:{"classifier_id":155,"value":"{{ review.content}}"},
-              }
-      {% endfor %}
     </script>
 
 
