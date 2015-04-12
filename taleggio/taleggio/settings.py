@@ -25,7 +25,10 @@ SECRET_KEY = '4)w7s0+%q8ih5-yzxxyc*k_c8_fz9t^e4rkh73l&dn(k(j_ch1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = ['ratymyhome.bluemix.net.', 'ratemyho.me.', 'localhost']
 
 
 # Application definition
