@@ -6,3 +6,4 @@ python-social-auth
 djangorestframework
 djangorestframework-xml
 djangorestframework-yaml
+MetaMindApi --upgrade
