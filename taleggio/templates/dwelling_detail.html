@@ -162,21 +162,21 @@
             <div class="col-md-4">
                 <div class="list-group">
                     <a class="list-group-item active">Interested Renters</a>
-                    <a href="#" class="list-group-item">Jane Doe</a>
+                    <a href="#" class="list-group-item">John Doe</a>
                     <a href="#" class="list-group-item">Erlich Bachman</a>
-                    <a href="#" class="list-group-item">Jane Doe</a>
-                    <a href="#" class="list-group-item">Erlich Bachman</a>
-                    <a href="#" class="list-group-item">Jane Doe</a>
-                    <a href="#" class="list-group-item">Erlich Bachman</a>
+                    <a href="#" class="list-group-item">Sam Altman</a>
+                    <a href="#" class="list-group-item">Chris Ritz</a>
+                    <a href="#" class="list-group-item">Darren Smith</a>
+                    <a href="#" class="list-group-item">Jack Blue</a>
                 </div>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Nearby Places</a>
-                    <a href="#" class="list-group-item">125 Address Ct</a>
-                    <a href="#" class="list-group-item">4400 University Dr</a>
-                    <a href="#" class="list-group-item">125 Address Ct</a>
-                    <a href="#" class="list-group-item">4400 University Dr</a>
-                    <a href="#" class="list-group-item">125 Address Ct</a>
-                    <a href="#" class="list-group-item">4400 University Dr</a>
+                    <a href="#" class="list-group-item">368 G St SW</a>
+                    <a href="#" class="list-group-item">608 G St SE</a>
+                    <a href="#" class="list-group-item">307 M St SW</a>
+                    <a href="#" class="list-group-item">135 4th St SW</a>
+                    <a href="#" class="list-group-item">280 New Jersey Ave SE</a>
+                    <a href="#" class="list-group-item">410 A St NE</a>
                 </div>
             </div>
 
@@ -214,8 +214,15 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
-      }
+      };
       google.maps.event.addDomListener(window, 'load', initialize);
+      {% for review in reviews %}
+      $.ajax({url: "https://www.metamind.io/language/classify",
+              type: "POST",
+              headers: {"Authorization" : "Basic JcsbHMxoLMdw70XN9XxSWH03H69yYKA8Ruad6B28lA1kgY0s4t"}, 
+              data:{"classifier_id":155,"value":"{{ review.content}}"},
+              }
+      {% endfor %}
     </script>
 
 
