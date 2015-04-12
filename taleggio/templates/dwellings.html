@@ -12,13 +12,20 @@
 </ol>
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
+<div class="col-md-3 thumbnail">
+test
+</div>
+
+  <div class="col-md-9">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      
       {% for dwelling in object_list %}
+      <img src="..." alt="...">
       <div class="caption">
         <h3>{{ dwelling.address }}</h3>
+        {% if dwelling.desc %}
         <p>{{ dwelling.desc|truncatechars:100 }}</p>
+        {% endif %}
         <p><a href="/dwelling/{{ dwelling.id }}" class="btn btn-primary" role="button">View Property</a> </p>
       </div>
       {% endfor %}
