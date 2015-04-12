@@ -1,6 +1,11 @@
 from django.db import models
 from rest_framework import serializers
 
+class DwellingManager(models.Manager):
+
+    def calculateRating(self, allRatings):
+        return 3.5
+
 
 class Address(models.Model):
     number = models.IntegerField()
@@ -10,7 +15,7 @@ class Address(models.Model):
     zipcode = models.IntegerField()
 
     def __unicode__(self):
-        return u"{0} {1}, {2}".format(self.number, self.street, self.state)
+        return u"{0} {1}, {2} {3}, {4}".format(self.number, self.street, self.city, self.state, self.zipcode)
 
 
 class AddressSerializer(serializers.ModelSerializer):
@@ -20,6 +25,7 @@ class AddressSerializer(serializers.ModelSerializer):
 
 class Dwelling(models.Model):
     address = models.ForeignKey('Address')
+    desc = models.CharField(max_length = 500, default="Description")
 
     TOWNHOUSE = 'TH'
     APARTMENT = 'A'
@@ -31,7 +37,10 @@ class Dwelling(models.Model):
         (HOUSE, 'House')
     )
 
-    dwelling_type = models.CharField(max_length=2, choices=DWELLING_CHOICES)
+    dwelling_type = models.CharField(max_length=2, choices=DWELLING_CHOICES,
+                                     blank=True)
+
+    objects = DwellingManager()
 
     def __unicode__(self):
         return str(self.address)
