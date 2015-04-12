@@ -7,6 +7,7 @@ from rest_framework import viewsets
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from django.db.models import Q
+import random
 
 @csrf_exempt
 def search(request):
@@ -44,6 +45,7 @@ class DwellingView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DwellingView, self).get_context_data(**kwargs)
         context['reviews'] = DwellingReview.objects.all()
+        context['crime'] = random.randint(30,80)
         context['totalRating'] = Dwelling.objects.calculateRating(context['reviews'])
         return context
 
