@@ -1,8 +1,7 @@
 body{
   background-image: url('../img/background.jpg');
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-color: #fbf3e7;
+  background-position: center;
   font-family: Merriweather,'Helvetica Neue',Arial,sans-serif;
 }
 
