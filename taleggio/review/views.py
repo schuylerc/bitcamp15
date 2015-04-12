@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from review.models import DwellingReview
 
 # Create your views here.
 def reviewDetail(request, review_id):
@@ -6,6 +8,6 @@ def reviewDetail(request, review_id):
 	return render(request, 'reviewDetail.html', {'user': request.user})
 
 
-def reviews(request):
-	#should show a list of all available dwellings
-	return render(request, 'reviews.html', {'user': request.user})
+class ReviewList(ListView):
+    model = DwellingReview
+    template_name = 'reviews.html'
