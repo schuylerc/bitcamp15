@@ -8,7 +8,7 @@
     <div class="thumbnail">
       {% for review in object_list %}
       <div class="caption">
-        <h4>Review for: {{ review.Dwelling.address }}</h4>
+        <h4>Review for: {{ review.dwelling.address }}</h4>
         <p>by: {{ review.userCreated.first_name }} {{ review.userCreated.last_name }}</p>
         <p>{{ review.content }}</p>
       </div>

@@ -1,7 +1,7 @@
 from django.views.generic import CreateView, DetailView, DeleteView, ListView,\
     UpdateView
 from .models import Dwelling, DwellingSerializer
-from review.models import Review
+from review.models import DwellingReview
 from dwelling.models import Dwelling
 from rest_framework import viewsets
 from django.views.decorators.csrf import csrf_exempt
@@ -43,7 +43,7 @@ class DwellingView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DwellingView, self).get_context_data(**kwargs)
-        context['reviews'] = Review.objects.all()
+        context['reviews'] = DwellingReview.objects.all()
         context['totalRating'] = Dwelling.objects.calculateRating(context['reviews'])
         return context
 
