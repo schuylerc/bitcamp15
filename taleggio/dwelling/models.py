@@ -30,6 +30,7 @@ class AddressSerializer(serializers.ModelSerializer):
 class Dwelling(models.Model):
     address = models.ForeignKey('Address')
     desc = models.CharField(max_length = 500, default="Description")
+    rentEstimate = models.IntegerField(default = 1000)
     totalRating = 3.5
     reviewCount = 3
 
@@ -50,6 +51,11 @@ class Dwelling(models.Model):
 
     def __unicode__(self):
         return str(self.address)
+
+    def save(self, *args, **kwargs):
+        
+        super(Blog, self).save(*args, **kwargs) # Call the "real" save() method.
+
 
 
 class DwellingSerializer(serializers.ModelSerializer):
