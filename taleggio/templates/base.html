@@ -86,7 +86,7 @@
                      <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
                         <li>
                             <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-facebook-square"></i> Login with Facebook</a>
-                            <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-twitter-square"></i> Login with Twitter</a>
+                            <a class="btn btn-primary btn-xl btn-block" style="color: #fff" href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><i class="fa fa-twitter-square"></i> Login with Twitter</a>
                         </li>
                      </ul>
                     {% endif %}
