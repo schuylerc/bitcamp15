@@ -23,5 +23,4 @@ class DwellingDelete(DeleteView):
 
 class DwellingView(DetailView):
     model = Dwelling
-    dwelling_id = id
     template_name = 'dwellingDetail.html'
