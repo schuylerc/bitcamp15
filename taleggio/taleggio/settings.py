@@ -39,9 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Additional apps
     'social.apps.django_app.default',
-    #'django.contrib.gis',
     'dwelling',
     'review',
+    'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -128,6 +128,19 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
     '/srv/www/static/',
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework_xml.parsers.XMLParser',
+        'rest_framework_yaml.parsers.YAMLParser',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',
+        'rest_framework_yaml.renderers.YAMLRenderer',
+    ),
+}
 
 try:
     from .secrets import *
