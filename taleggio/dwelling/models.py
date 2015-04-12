@@ -26,6 +26,8 @@ class AddressSerializer(serializers.ModelSerializer):
 class Dwelling(models.Model):
     address = models.ForeignKey('Address')
     desc = models.CharField(max_length = 500, default="Description")
+    totalRating = 3.5
+    reviewCount = 3
 
     TOWNHOUSE = 'TH'
     APARTMENT = 'A'
