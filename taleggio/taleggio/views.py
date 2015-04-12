@@ -7,4 +7,3 @@ def index(request):
 
 def auth_test(request):
     return render(request, 'auth_test.html')
-
