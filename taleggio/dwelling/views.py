@@ -12,12 +12,16 @@ from django.db.models import Q
 def search(request):
     searchQuery = request.POST.get('searchQuery')
     template_name = 'dwellings.html'
-    Dwellings = Dwelling.objects
-    queryset = Dwellings.filter(Q(address__number__contains=searchQuery) | Q(address__street__contains=searchQuery) | Q(address__city__contains=searchQuery) | Q(address__state__contains=searchQuery) | Q(address__zipcode__contains=searchQuery))
-    
-    context = {'object_list': queryset}
+    if searchQuery != None:
+        queryset = Dwelling.objects.filter(Q(address__number__contains=searchQuery) | Q(address__street__contains=searchQuery) | Q(address__city__contains=searchQuery) | Q(address__state__contains=searchQuery) | Q(address__zipcode__contains=searchQuery))
+        
+        context = {'object_list': queryset}
 
-    return render_to_response(template_name, context)
+        return render_to_response(template_name, context)
+    else:
+        queryset = Dwelling.objects.all()
+        context = {'object_list': queryset}
+        return render_to_response(template_name, context)
 
 class DwellingCreate(CreateView):
     model = Dwelling
